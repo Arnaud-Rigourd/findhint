@@ -13,7 +13,7 @@ class EnigmasController < ApplicationController
   def create
     @enigma = Enigma.new(params_enigma)
     @answer = params['enigma']['answer']
-    @valid_answers = ["please", "stp", "s'il te plait", "s'il te plaît", "s il te plait", "s il te plaît", "s'il-te-plait", "s'il-te-plaît"]
+    @valid_answers = ["please", "stp", 'svp', "s'il te plait", "s'il te plaît", "s il te plait", "s il te plaît", "s'il-te-plait", "s'il-te-plaît"]
 
     @valid_answers.each do |valid_answer|
       if @answer.include?(valid_answer)
@@ -34,6 +34,9 @@ class EnigmasController < ApplicationController
   end
 
   def second
+  end
+
+  def welldone
   end
 
   private

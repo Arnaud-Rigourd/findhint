@@ -1,13 +1,7 @@
 <div class="container">
   <h1>new</h1>
   <p>Super ! Pour commencer, donne moi le mot de passe ! (Si tu ne trouves vraiment pas, un compliment fera l’affaire s’il est sincère)</p>
-  <%= simple_form_for(@enigma) do |f| %>
-    <%= f.input :answer,
-                label: "Ta réponse ici 👉" %>
-    <%= f.submit "Valider" %>
-  <% end %>
-
-  <p><%= @answer_score %></p>
+  <%= render partial:"shared/form_answer", locals:{enigma: @enigma} %>
 </div>
 
 <% console %>

@@ -1,5 +1,8 @@
 <div class="container" data-controller="highlight">
   <h1>Bravo, tu as réussi ! Tu fais désormais parti du top 99%, c’est pas mal 😎 Pour passer la prochaine épreuve, je te mets direct un indice 👇</h1>
 
-  <p data-highlight-target="text" data-action="mouseup->highlight#reveal">“Parfois, il suffit juste de mettre en évidence la réponse” 🤔</p>
+  <div data-highlight-target="divTexts">
+    <p id="highlight" data-highlight-target="text" data-action="mouseup->highlight#reveal">“Parfois, il suffit juste de mettre en évidence la réponse” 🤔</p>
+    <p class="hidden" data-highlight-target="url" data-action="mouseup->highlight#copy" ><%= @third_url %></p>
+  </div>
 </div>

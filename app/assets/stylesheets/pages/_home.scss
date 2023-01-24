@@ -1,1 +1,16 @@
-// Specific CSS for your home-page
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	list-style: none;
+
+	a{
+		&:visited {
+      color: black;
+    }
+  }
+}
+
+.hidden {
+	display: none;
+}

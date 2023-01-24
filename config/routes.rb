@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :enigmas, only: [:new, :create] do
     collection do
       get :second, to: "enigmas#second"
+      get :third, to: "enigmas#third"
     end
   end
 end

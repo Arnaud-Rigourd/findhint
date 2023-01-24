@@ -1,7 +1,8 @@
 <div class="container__form">
-  <%= simple_form_for(@enigma) do |f| %>
+  <%= simple_form_for(enigma) do |f| %>
     <%= f.input :answer,
-                label: "Ta réponse ici 👉" %>
+                label: "Ta réponse ici 👉",
+                placeholder: "Que vas-tu bien pouvoir nous écrire 🤔" %>
     <%= f.submit "Valider" %>
   <% end %>
 </div>

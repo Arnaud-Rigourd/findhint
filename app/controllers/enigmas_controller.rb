@@ -34,6 +34,10 @@ class EnigmasController < ApplicationController
   end
 
   def second
+    @third_url = third_enigmas_path
+  end
+
+  def third
   end
 
   private

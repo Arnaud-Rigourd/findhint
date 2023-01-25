@@ -12,7 +12,6 @@ class EnigmasController < ApplicationController
 
   def create
     @enigma = Enigma.new(params_enigma)
-    raise
     # if params['action'] == 'new'
       @answer = params['enigma']['answer']
       @valid_answers = ["please", "stp", 'svp', "s'il te plait", "s'il te plaît", "s il te plait", "s il te plaît", "s'il-te-plait", "s'il-te-plaît"]

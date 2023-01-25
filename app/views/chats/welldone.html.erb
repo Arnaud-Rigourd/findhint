@@ -50,7 +50,7 @@
     <div class="third-enigma__content">
 
       <div class="chat">
-        <%= render partial:"shared/chat" %>
+        <%= render partial:"shared/chat", locals: {chats: @chats} %>
       </div>
 
       <div class="hint">

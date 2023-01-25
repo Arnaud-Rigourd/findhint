@@ -21,10 +21,6 @@ class EnigmasController < ApplicationController
     @enigma = Enigma.find(params[:enigma_id])
   end
 
-  def welldone
-
-  end
-
   private
 
   # def params_enigma

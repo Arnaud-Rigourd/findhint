@@ -6,9 +6,6 @@ Rails.application.routes.draw do
 
   resources :enigmas, only: [:new, :create] do
     get :second, to: 'enigmas#second'
-    collection do
-      get :welldone, to: 'enigmas#welldone'
-    end
     resources :answers, only: [:create] do
       collection do
         get :first, to: 'answers#first'

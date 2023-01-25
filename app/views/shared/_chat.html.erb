@@ -12,8 +12,8 @@
 <div class="messages">
   <div class="historic-messages">
     <ul>
-      <% @enigmas.each do |e| %>
-        <li><%= e.answer %></li>
+      <% @answers.each do |a| %>
+        <li><%= a.content %></li>
       <% end %>
     </ul>
   </div>
@@ -23,12 +23,12 @@
 
   <br />
 
-  <%= simple_form_for(@enigma) do |f| %>
-    <%= f.input :answer,
+  <%#= simple_form_for(@enigma, @answer) do |f| %>
+    <%#= f.input :content,
                 placeholder: 'Écris ta réponse ici...'
                 %>
-    <%= f.submit "Envoyer" %>
-  <% end %>
+    <%#= f.submit "Envoyer" %>
+  <%# end %>
 
 </div>
 

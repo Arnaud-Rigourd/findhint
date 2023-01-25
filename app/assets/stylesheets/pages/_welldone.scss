@@ -1,0 +1,63 @@
+.frame-top {
+  border: 8px solid black;
+  height: 80vh;
+  margin: 5vh auto;
+  width: 90vw;
+
+  // parallax
+  transform-style: preserve-3d;
+  z-index: -5;
+  transform: translateZ(-10px) scale(2);
+}
+
+.header-scroll {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+
+  p {
+    animation: flickering 2500ms linear infinite;
+    opacity: 0;
+  }
+}
+
+.quotes {
+  margin: 0 auto;
+  z-index: -5;
+  transform-style: preserve-3d;
+  transform: translate3d(0, 50vh, -8px) scale(2.2);
+  perspective: 10px;
+  width: 73vw;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 30vw;
+
+  .quote {
+    width: 40vw;
+    min-width: 100px;
+
+    &:nth-child(odd){
+      margin: 110px 0;
+      // parallax
+      transform-style: preserve-3d;
+      z-index: -5;
+      transform: translate3d(-33vw, 46vh, -10px) scale(2);
+    }
+
+    &:nth-child(even){
+      margin: 55px 0;
+      // parallax
+      transform-style: preserve-3d;
+      z-index: -5;
+      transform: translate3d(-19vw, 45vh, -5px) scale(1.5);
+    }
+  }
+}
+
+.third-enigma {
+  // parallax
+  transform-style: preserve-3d;
+  z-index: -5;
+  transform: translate3d(0, 100vh, -10px) scale(2);
+}

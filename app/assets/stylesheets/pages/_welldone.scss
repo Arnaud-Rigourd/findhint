@@ -12,13 +12,13 @@
 
 .header-scroll {
   position: absolute;
+  bottom: 0;
   text-align: center;
   width: 100%;
-  bottom: 0;
 
   p {
-    opacity: 0;
     animation: flickering 2500ms linear infinite;
+    opacity: 0;
   }
 }
 

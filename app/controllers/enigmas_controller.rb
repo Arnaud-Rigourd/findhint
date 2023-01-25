@@ -43,8 +43,7 @@ class EnigmasController < ApplicationController
   end
 
   def welldone
-    @enigmas = Enigma.all
-    @enigma = Enigma.new
+
   end
 
   private

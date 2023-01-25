@@ -9,7 +9,11 @@ Rails.application.routes.draw do
     resources :answers, only: [:create] do
       collection do
         get :first, to: 'answers#first'
-        get :welldone, to: 'answers#welldone'
+      end
+    end
+    resources :chats, only: [:create] do
+      collection do
+        get :welldone, to: 'chats#welldone'
       end
     end
   end

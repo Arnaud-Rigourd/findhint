@@ -9,10 +9,6 @@ class AnswersController < ApplicationController
     @answer = Answer.new
   end
 
-  def welldone
-    @answers = @enigma.answers
-  end
-
   def create
     @answer = Answer.new(params_answer)
 

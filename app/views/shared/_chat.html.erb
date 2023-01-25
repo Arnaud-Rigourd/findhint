@@ -12,8 +12,8 @@
 <div class="messages">
   <div class="historic-messages">
     <ul>
-      <% @answers.each do |a| %>
-        <li><%= a.content %></li>
+      <% chats.each do |c| %>
+        <li><%= c.content %></li>
       <% end %>
     </ul>
   </div>

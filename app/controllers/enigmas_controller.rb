@@ -12,31 +12,39 @@ class EnigmasController < ApplicationController
 
   def create
     @enigma = Enigma.new(params_enigma)
-    @answer = params['enigma']['answer']
-    @valid_answers = ["please", "stp", 'svp', "s'il te plait", "s'il te plaît", "s il te plait", "s il te plaît", "s'il-te-plait", "s'il-te-plaît"]
+    # if params['action'] == 'new'
+      @answer = params['enigma']['answer']
+      @valid_answers = ["please", "stp", 'svp', "s'il te plait", "s'il te plaît", "s il te plait", "s il te plaît", "s'il-te-plait", "s'il-te-plaît"]
 
-    @valid_answers.each do |valid_answer|
-      if @answer.include?(valid_answer)
-        return redirect_to second_enigmas_path if @enigma.save
+      @valid_answers.each do |valid_answer|
+        if @answer.include?(valid_answer)
+          return redirect_to second_enigmas_path if @enigma.save
+        end
       end
-    end
 
-    perspective_API(@answer)
-    @answer_score = @result['attributeScores']['TOXICITY']['summaryScore']['value']
-    @compliment_score = 0.01
+      perspective_API(@answer)
+      @answer_score = @result['attributeScores']['TOXICITY']['summaryScore']['value']
+      @compliment_score = 0.01
 
-    if @answer_score < @compliment_score
-      return redirect_to second_enigmas_path if @enigma.save
-    else
-      return render :new unless @enigma.save
-    end
+      if @answer_score < @compliment_score
+        return redirect_to second_enigmas_path if @enigma.save
+      else
+        return render :new unless @enigma.save
+      end
+    # else
+
+    # end
 
   end
 
   def second
+    # Destroy toutes les instances de Enigma au desconnect via stimulus
+    # Enigma.destroy_all
   end
 
   def welldone
+    @enigmas = Enigma.all
+    @enigma = Enigma.new
   end
 
   private

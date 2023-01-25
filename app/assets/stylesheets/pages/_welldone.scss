@@ -57,8 +57,21 @@
 }
 
 .third-enigma {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 200vh auto 10vh auto;
+  width: 90vw;
+
   // parallax
   transform-style: preserve-3d;
   z-index: -5;
-  transform: translate3d(0, 100vh, -10px) scale(2);
+  transform: translateZ(-10px) scale(2);
+
+  &__content {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
 }

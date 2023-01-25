@@ -1,0 +1,8 @@
+.chat {
+  border: 1px solid black;
+
+  .historic-messages {
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+}

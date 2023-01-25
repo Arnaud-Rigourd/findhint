@@ -48,14 +48,24 @@
     <p>Bon, je vois que t’as pas le temps, alors on enchaîne ! Mais je n’ai plus d’idée... Du coup, je me suis aller prendre de l’inspiration sur les réseaux 😅 Commente ce poste avec ta réponse ! </p>
 
     <div class="third-enigma__content">
-      <div class="chat"></div>
+
+      <div class="chat">
+        <%= render partial:"shared/chat" %>
+      </div>
+
       <div class="hint">
-        <div class="hint__images"></div>
+
         <div class="hint__text">
           <p>Celle-ci n’est pas simple, alors t’as le droit à des indices en images 👇</p>
         </div>
+
+        <div class="hint__images">
+        </div>
+
       </div>
+
     </div>
+
   </div>
 
 </div>

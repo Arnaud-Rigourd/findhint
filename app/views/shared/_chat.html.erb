@@ -1,0 +1,35 @@
+<div class="status">
+  <img src="#" alt="avatar">
+  <div class="status-content">
+    <div class="profil-info">
+      <h3>Philosophedu35</h3>
+      <p>@phiphi</p>
+    </div>
+    <p>Il y a une question pour laquelle je ne trouve pas la réponse : qu’est-ce qui est pire que le diable, mieux que dieu, et si on en mange, on meurt ?</p>
+  </div>
+</div>
+
+<div class="messages">
+  <div class="historic-messages">
+    <ul>
+      <% @enigmas.each do |e| %>
+        <li><%= e.answer %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <%#= render partial:"shared/form_chat", locals: {} %>
+
+
+  <br />
+
+  <%= simple_form_for(@enigma) do |f| %>
+    <%= f.input :answer,
+                placeholder: 'Écris ta réponse ici...'
+                %>
+    <%= f.submit "Envoyer" %>
+  <% end %>
+
+</div>
+
+<%# console %>

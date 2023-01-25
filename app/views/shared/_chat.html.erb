@@ -23,12 +23,12 @@
 
   <br />
 
-  <%#= simple_form_for(@enigma, @answer) do |f| %>
-    <%#= f.input :content,
+  <%= simple_form_for [@enigma, @chat] do |f| %>
+    <%= f.input :content,
                 placeholder: 'Écris ta réponse ici...'
                 %>
-    <%#= f.submit "Envoyer" %>
-  <%# end %>
+    <%= f.submit "Envoyer" %>
+  <% end %>
 
 </div>
 

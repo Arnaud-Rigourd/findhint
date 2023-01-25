@@ -9,9 +9,6 @@ export default class extends Controller {
   }
 
   hide(){
-    // this.scrollTarget.classList.add('hidden')
-    console.log(this.scrollTarget.getBoundingClientRect()['y'])
-    console.log(window.innerHeight)
     if (this.scrollTarget.getBoundingClientRect()['y'] < window.innerHeight - 60) {
       this.scrollTarget.style = "opacity: 0"
     } else {

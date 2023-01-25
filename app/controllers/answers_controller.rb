@@ -10,11 +10,12 @@ class AnswersController < ApplicationController
   end
 
   def welldone
-
+    @answers = @enigma.answers
   end
 
   def create
     @answer = Answer.new(params_answer)
+
     @user_answer = params['answer']['content']
     @valid_answers = ["please", "stp", 'svp', "s'il te plait", "s'il te plaît", "s il te plait", "s il te plaît", "s'il-te-plait", "s'il-te-plaît"]
     @answer.enigma = @enigma

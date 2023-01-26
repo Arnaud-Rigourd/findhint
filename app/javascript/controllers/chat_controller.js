@@ -26,6 +26,7 @@ export default class extends Controller {
       .then((data) => {
         if (data.inserted_message) {
           this.messagesTarget.insertAdjacentHTML("beforeend", data.inserted_message)
+          this.messagesTarget.insertAdjacentHTML("beforeend", data.inserted_bot_message)
         }
         this.formTarget.outerHTML = data.form
         this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)

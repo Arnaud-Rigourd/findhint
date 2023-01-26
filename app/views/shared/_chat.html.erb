@@ -13,8 +13,14 @@
   <div class="historic-messages">
     <ul>
       <% chats.each do |c| %>
-        <li><%= c.content %></li>
+        <%# if c.origin == 'bot' %>
+
+        <%# else %>
+
+        <%# end %>
+        <li class='chat-user'><%= c.content %></li>
       <% end %>
+      <%#= @chat_bot.content %>
     </ul>
   </div>
 

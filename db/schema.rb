@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_25_172917) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_26_093557) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -27,6 +27,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_25_172917) do
     t.bigint "enigma_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "origin", default: true
     t.index ["enigma_id"], name: "index_chats_on_enigma_id"
   end
 

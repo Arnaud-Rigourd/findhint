@@ -11,6 +11,8 @@ class ChatsController < ApplicationController
     @chat.enigma = @enigma
 
     if @chat.save
+
+      @chat_bot = Chat.create(content: "Ce n'est pas la bonne réponse", origin: false, enigma_id: @enigma.id)
       redirect_to welldone_enigma_chats_path(@enigma)
     else
       render :welldone

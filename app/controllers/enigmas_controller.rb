@@ -14,7 +14,7 @@ class EnigmasController < ApplicationController
     if @enigma.save
       redirect_to first_enigma_answers_path(@enigma)
     else
-      render :index
+      render :index, status: :unprocessable_entity
     end
   end
 

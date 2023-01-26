@@ -1,8 +1,11 @@
 <div class="form-chat">
-  <%= simple_form_for [@enigma, @chat] do |f| %>
+  <%= simple_form_for([enigma, chat], data: {
+                                        chat_target:"form",
+                                        action:"submit->chat#sendMessage"
+                                      }) do |f|
+  %>
     <%= f.input :content,
-                placeholder: 'Écris ta réponse ici...'
-                %>
+                placeholder: 'Écris ta réponse ici...' %>
     <%= f.submit "Envoyer" %>
   <% end %>
 </div>

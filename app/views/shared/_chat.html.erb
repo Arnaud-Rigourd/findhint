@@ -9,18 +9,14 @@
   </div>
 </div>
 
-<div class="messages">
-  <div class="historic-messages">
-    <ul>
-      <% chats.each do |c| %>
-        <li class='chat-user'><%= c.content %></li>
-      <% end %>
-    </ul>
-  </div>
+<div class="messages" data-chat-target="chatWrapper">
+  <%= render partial:"shared/messages", locals: {chats: @chats} %>
 
   <%= render partial:"shared/form_chat", locals: {enigma: @enigma, chat: @chat} %>
 
-  <% if @chat_bots.where("content LIKE ?", 'Bravo' + '%').length > 0 %>
+  <p data-chat-target="test" data-action="click->chat#test">Scroll ?</p>
+
+  <% unless @chat_bots.where("content LIKE ?", 'Bravo' + '%').empty? %>
     <p class="btn"><%= link_to "Aller à la dernière épreuve", enigma_final_path(@enigma) %></p>
   <% end %>
 

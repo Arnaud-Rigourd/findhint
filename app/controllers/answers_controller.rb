@@ -29,7 +29,7 @@ class AnswersController < ApplicationController
     if @user_answer_score < @compliment_score
       return redirect_to enigma_second_path(@enigma) if @answer.save
     else
-      return render :new unless @answer.save
+      return render :new, status: :unprocessable_entity unless @answer.save
     end
   end
 

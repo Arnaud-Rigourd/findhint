@@ -13,19 +13,12 @@
   <div class="historic-messages">
     <ul>
       <% chats.each do |c| %>
-        <%# if c.origin == 'bot' %>
-
-        <%# else %>
-
-        <%# end %>
         <li class='chat-user'><%= c.content %></li>
       <% end %>
-      <%#= @chat_bot.content %>
     </ul>
   </div>
 
   <%#= render partial:"shared/form_chat", locals: {} %>
-
 
   <br />
 
@@ -35,6 +28,19 @@
                 %>
     <%= f.submit "Envoyer" %>
   <% end %>
+
+  <br />
+
+  <%# @chat_bots.each do |bot| %>
+    <%# if bot.content.downcase.include?('bravo') %>
+
+    <%# end %>
+  <%# end %>
+
+  <% if @chat_bots.where("content LIKE ?", 'Bravo' + '%') %>
+    <p><%= link_to "Aller à la dernière épreuve", enigma_final_path(@enigma) %></p>
+  <% end %>
+
 
 </div>
 

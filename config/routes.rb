@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root 'enigmas#index'
 
-  resources :enigmas, only: [:new, :create] do
+  resources :enigmas, only: [:index, :create] do
     get :second, to: 'enigmas#second'
     get :final, to: 'enigmas#final'
     resources :answers, only: [:create] do

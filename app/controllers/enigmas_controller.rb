@@ -1,4 +1,5 @@
 class EnigmasController < ApplicationController
+  before_action :set_enigma, only: [:second, :final]
 
   def index
   end
@@ -18,12 +19,14 @@ class EnigmasController < ApplicationController
   end
 
   def second
-    @enigma = Enigma.find(params[:enigma_id])
+  end
+
+  def final
   end
 
   private
 
-  # def params_enigma
-  #   params.require(:enigma).permit(:answer)
-  # end
+  def set_enigma
+    @enigma = Enigma.find(params[:enigma_id])
+  end
 end

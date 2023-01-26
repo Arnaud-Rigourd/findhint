@@ -18,27 +18,16 @@
     </ul>
   </div>
 
-  <%#= render partial:"shared/form_chat", locals: {} %>
+  <%= render partial:"shared/form_chat", locals: {enigma: @enigma, chat: @chat} %>
 
   <br />
 
-  <%= simple_form_for [@enigma, @chat] do |f| %>
-    <%= f.input :content,
-                placeholder: 'Écris ta réponse ici...'
-                %>
-    <%= f.submit "Envoyer" %>
-  <% end %>
+
 
   <br />
-
-  <%# @chat_bots.each do |bot| %>
-    <%# if bot.content.downcase.include?('bravo') %>
-
-    <%# end %>
-  <%# end %>
 
   <% if @chat_bots.where("content LIKE ?", 'Bravo' + '%') %>
-    <p><%= link_to "Aller à la dernière épreuve", enigma_final_path(@enigma) %></p>
+    <p class="btn"><%= link_to "Aller à la dernière épreuve", enigma_final_path(@enigma) %></p>
   <% end %>
 
 

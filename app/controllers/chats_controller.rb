@@ -10,18 +10,29 @@ class ChatsController < ApplicationController
   def create
     @chat = Chat.new(params_chat)
     @chat.enigma = @enigma
+    @chats = @enigma.chats
 
-    if @chat.save
-      @chat_bot_answers = ["Ce n'est malheureusement pas la bonne réponse", "Bien essayé, mais ce n'est pas ça", "Désolé, mais ce n'est pas la réponse", "Tu as pensé à chercher sur Google ?", "Ce n'est pas ca, mais je te donne un indice : la réponse tient en quatre lettres"]
+    respond_to do |format|
 
-      if @chat.content.downcase == 'rien'
-        @chat_bot = Chat.create(content: "Bravo ! Tu as trouvé champion !", origin: false, enigma_id: @enigma.id)
+      if @chat.save
+        format.html {
+          @chat_bot_answers = ["Ce n'est malheureusement pas la bonne réponse", "Bien essayé, mais ce n'est pas ça", "Désolé, mais ce n'est pas la réponse", "Tu as pensé à chercher sur Google ?", "Ce n'est pas ca, mais je te donne un indice : la réponse tient en quatre lettres"]
+
+          if @chat.content.downcase == 'rien'
+            @chat_bot = Chat.create(content: "Bravo ! Tu as trouvé champion !", origin: false, enigma_id: @enigma.id)
+          else
+            @chat_bot = Chat.create(content: @chat_bot_answers.sample, origin: false, enigma_id: @enigma.id)
+          end
+          redirect_to welldone_enigma_chats_path(@enigma)
+        }
+        format.json
       else
-        @chat_bot = Chat.create(content: @chat_bot_answers.sample, origin: false, enigma_id: @enigma.id)
+        format.html {
+          render :welldone, status: :unprocessable_entity
+        }
+        format.json
       end
-      redirect_to welldone_enigma_chats_path(@enigma)
-    else
-      render :welldone
+
     end
   end
 

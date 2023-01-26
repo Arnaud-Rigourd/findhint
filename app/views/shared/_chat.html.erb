@@ -20,12 +20,6 @@
 
   <%= render partial:"shared/form_chat", locals: {enigma: @enigma, chat: @chat} %>
 
-  <br />
-
-
-
-  <br />
-
   <% if @chat_bots.where("content LIKE ?", 'Bravo' + '%') %>
     <p class="btn"><%= link_to "Aller à la dernière épreuve", enigma_final_path(@enigma) %></p>
   <% end %>

@@ -5,7 +5,13 @@
                                       }) do |f|
   %>
     <%= f.input :content,
-                placeholder: 'Écris ta réponse ici...' %>
+                placeholder: 'Écris ta réponse ici...',
+                input_html: {
+                  data: {
+                    chat_target:"formInput"
+                  }
+                }
+                 %>
     <%= f.submit "Envoyer" %>
   <% end %>
 </div>

@@ -14,11 +14,11 @@
 
   <%= render partial:"shared/form_chat", locals: {enigma: @enigma, chat: @chat} %>
 
-  <p data-chat-target="test" data-action="click->chat#test">Scroll ?</p>
-
+  <span data-chat-target="nextStageBtn">
   <% unless @chat_bots.where("content LIKE ?", 'Bravo' + '%').empty? %>
-    <p class="btn"><%= link_to "Aller à la dernière épreuve", enigma_final_path(@enigma) %></p>
+    <%= render partial:"shared/next_stage_btn", locals: {enigma: @enigma} %>
   <% end %>
+  </span>
 
 
 </div>

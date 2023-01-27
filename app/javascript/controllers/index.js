@@ -10,5 +10,8 @@ application.register("chat", ChatController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import HintController from "./hint_controller"
+application.register("hint", HintController)
+
 import WrapperController from "./wrapper_controller"
 application.register("wrapper", WrapperController)

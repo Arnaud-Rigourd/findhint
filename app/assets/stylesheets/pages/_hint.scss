@@ -1,0 +1,30 @@
+.overflow-x {
+  overflow-x: hidden;
+}
+
+.hint {
+  height: 600px;
+}
+
+.container__hint {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+
+  .image-track {
+    position: absolute;
+    display: flex;
+    gap: 4vmin;
+    // top: 50%;
+    // left: 50%;
+    transform: translate(0, 0);
+    cursor: grab;
+
+    & > .image {
+      width: 40vmin;
+      height: 56vmin;
+      object-fit: cover;
+      object-position: 100% 50%;
+    }
+  }
+}

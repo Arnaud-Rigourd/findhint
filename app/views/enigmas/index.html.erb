@@ -1,9 +1,18 @@
-<div class="container">
-  <h1>BIENVENUE SUR FINDHINT !!!</h1>
+<div class="container flex-center">
+  <div class="frame flex-center">
+    <div class="corner-points flex-center">
+      <div class="point"></div>
+      <div class="point"></div>
+      <div class="point"></div>
+      <div class="point"></div>
+      <h1>BIENVENUE SUR FINDHINT !!!</h1>
 
-  <p>Tu as quelques minutes pour jouer ? (il y a une surprise à la fin ! )</p>
+      <p>Tu as quelques minutes pour jouer ? (il y a une surprise à la fin ! )</p>
 
-  <p><%= link_to "Oui", enigmas_path, data: {turbo_method: :post} %></p>
-  <p>Non</p>
-
+      <div class="yesno">
+        <p><%= link_to "Oui", enigmas_path, data: {turbo_method: :post} %></p>
+        <p>Non</p>
+      </div>
+    </div>
+  </div>
 </div>

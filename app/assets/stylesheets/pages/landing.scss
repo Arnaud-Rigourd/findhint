@@ -1,0 +1,31 @@
+.yesno{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 35%;
+  height: 20%;
+   p {
+    border: 2px solid black;
+    padding: 4px 15px;
+
+    a {
+      text-decoration: none;
+      color: black;
+      animation: alternateLinkColor 1500ms linear reverse infinite ;
+    }
+
+    &:first-child {
+      animation: alternateBackground 1500ms linear reverse infinite ;
+    }
+
+    &:last-child {
+      background-color: black;
+      color: white;
+      animation: alternateBackground 1500ms linear infinite ;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+   }
+}

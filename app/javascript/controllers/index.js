@@ -13,5 +13,8 @@ application.register("hello", HelloController)
 import HintController from "./hint_controller"
 application.register("hint", HintController)
 
+import NoPositionController from "./no_position_controller"
+application.register("no-position", NoPositionController)
+
 import WrapperController from "./wrapper_controller"
 application.register("wrapper", WrapperController)

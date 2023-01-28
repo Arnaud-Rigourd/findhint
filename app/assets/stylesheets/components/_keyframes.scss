@@ -9,3 +9,23 @@
     opacity: 0;
   }
 }
+
+@keyframes alternateBackground {
+  0%, 50% {
+    background-color: black;
+    color: white;
+  }
+  51%, 100% {
+    background-color: white;
+    color: black;
+  }
+}
+
+@keyframes alternateLinkColor {
+  0%, 50% {
+    color: white;
+  }
+  51%, 100% {
+    color: black;
+  }
+}

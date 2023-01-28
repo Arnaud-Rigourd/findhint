@@ -4,10 +4,6 @@ class EnigmasController < ApplicationController
   def index
   end
 
-  # def new
-  #   @enigma = Enigma.new
-  # end
-
   def create
     @enigma = Enigma.new(origin: 'index')
 

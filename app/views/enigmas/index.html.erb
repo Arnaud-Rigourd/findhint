@@ -5,13 +5,13 @@
       <div class="point"></div>
       <div class="point"></div>
       <div class="point"></div>
-      <h1>BIENVENUE SUR FINDHINT !!!</h1>
+    <h1>BIENVENUE SUR FINDHINT !!!</h1>
 
       <p>Tu as quelques minutes pour jouer ? (il y a une surprise à la fin ! )</p>
 
-      <div class="yesno">
+      <div class="yesno" data-controller="no-position">
         <p><%= link_to "Oui", enigmas_path, data: {turbo_method: :post} %></p>
-        <p>Non</p>
+        <p data-no-position-target="no" data-action="click->no-position#changePosition">Non</p>
       </div>
     </div>
   </div>

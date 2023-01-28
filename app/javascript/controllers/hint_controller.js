@@ -5,11 +5,11 @@ export default class extends Controller {
   static targets = ["hint", "imageTrack", "image"]
 
   connect() {
-    window.addEventListener('mousedown', (e) => {
+    this.hintTarget.addEventListener('mousedown', (e) => {
       this.imageTrackTarget.dataset.mouseDownAt = e.clientX
     })
 
-    window.addEventListener('mousemove', (e) => {
+    this.hintTarget.addEventListener('mousemove', (e) => {
       if(this.imageTrackTarget.dataset.mouseDownAt === '0') return;
 
       this.mouseDelta = parseFloat(this.imageTrackTarget.dataset.mouseDownAt) - e.clientX
@@ -40,7 +40,7 @@ export default class extends Controller {
       })
     })
 
-    window.addEventListener('mouseup', (e) => {
+    this.hintTarget.addEventListener('mouseup', (e) => {
       this.imageTrackTarget.dataset.mouseDownAt = '0'
 
       // Store the percentage value

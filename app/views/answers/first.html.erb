@@ -1,16 +1,28 @@
 <div class="container flex-center">
   <div class="frame flex-center">
-    <div class="corner-points flex-center">
+    <div class="corner-points flex-center space-around">
       <div class="point"></div>
       <div class="point"></div>
       <div class="point"></div>
       <div class="point"></div>
 
-      <h1>First Answer!</h1>
+      <div class="landing-frame flex-center flex-column space-around">
+        <h1>BIENVENUE SUR FINDHINT !!!</h1>
 
-      <h1>CADRE</h1>
-      <p>Super ! Pour commencer, donne moi le mot de passe ! (Si tu ne trouves vraiment pas, un compliment fera l’affaire s’il est sincère)</p>
-      <%= render partial:"shared/form_answers", locals: {enigma: @enigma, answer: @answer} %>
+        <p>Tu as quelques minutes pour jouer ? (il y a une surprise à la fin ! )</p>
+
+        <div class="yesno-fix">
+          <p>Oui</p>
+          <p>Non</p>
+        </div>
+      </div>
+
+      <div class="sub-frame">
+        <p>Super ! Pour commencer, donne moi le mot de passe !</p>
+        <%= render partial:"shared/form_answers", locals: {enigma: @enigma, answer: @answer} %>
+        <p class="sub-text">(Si tu ne trouves vraiment pas, un compliment sincère fera l’affaire)</p>
+      </div>
+
     </div>
   </div>
 </div>

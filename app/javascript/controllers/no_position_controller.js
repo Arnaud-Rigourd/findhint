@@ -5,16 +5,14 @@ export default class extends Controller {
   static targets = ['no']
 
   connect() {
-    console.log(this.noTarget.getBoundingClientRect()['x'])
-    console.log(this.noTarget.getBoundingClientRect()['y'])
+    // console.log(this.noTarget.getBoundingClientRect()['x'])
+    // console.log(this.noTarget.getBoundingClientRect()['y'])
   }
 
   changePosition(){
     this.xPosition = this.#range(-5, 10)
     this.yPosition = this.#range(-2, 5)
-    console.log(this.#sample(this.yPosition))
-    // this.noTarget.getBoundingClientRect()['x'] = 700
-    // console.log(this.noTarget.getBoundingClientRect()['x'])
+
     this.noTarget.style.transform = `translate(${this.#sample(this.xPosition) * 20}px, ${this.#sample(this.yPosition) * 20}px)`
   }
 

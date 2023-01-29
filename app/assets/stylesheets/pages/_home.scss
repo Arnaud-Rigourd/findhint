@@ -17,6 +17,14 @@
 	justify-content: center;
 }
 
+.flex-column {
+  flex-direction: column;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
 .hidden {
 	display: none;
 }
@@ -66,4 +74,8 @@ body {
       }
     }
   }
+}
+
+.sub-text {
+  font-size: 12px;
 }

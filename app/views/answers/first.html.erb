@@ -21,9 +21,7 @@
         <p>Super ! Pour commencer, donne moi le mot de passe !</p>
         <%= render partial:"shared/form_answers", locals: {enigma: @enigma, answer: @answer} %>
 
-        <div data-controller="popover" data-popover-url-value="<%= enigma_firsthint_path(@enigma) %>" >
           <a href="#"><i class="fa-solid fa-circle-question"></i></a>
-        </div>
 
         <p class="sub-text">(Si tu ne trouves vraiment pas, un compliment sincère fera l’affaire)</p>
       </div>

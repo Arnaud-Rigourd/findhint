@@ -33,10 +33,6 @@ class AnswersController < ApplicationController
     end
   end
 
-  def firsthint
-    render partial: 'shared/firsthint'
-  end
-
   private
 
   def params_answer

@@ -1,0 +1,29 @@
+.container__form {
+}
+form {
+  display: flex;
+
+  label {
+    font-size: 14px;
+    margin-right: 5px;
+  }
+
+  input {
+    font-family: $body-font;
+
+    &[name="answer[content]"] {
+      font-size: 10px;
+      min-width: 300px;
+      padding: 5px 10px;
+    }
+
+    &[type=submit] {
+      background-color: black;
+      border: none;
+      color: white;
+      font-size: 12px;
+      padding: 0 10px;
+      width: max-content;
+    }
+  }
+}

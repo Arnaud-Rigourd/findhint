@@ -1,15 +1,18 @@
 <div class="container flex-center">
   <div class="frame flex-center">
-    <div class="corner-points flex-center">
+    <div class="corner-points flex-center space-around">
       <div class="point"></div>
       <div class="point"></div>
       <div class="point"></div>
       <div class="point"></div>
-      <h1>Bravo, tu as réussi ! Tu fais désormais parti du top 99%, c’est pas mal 😎 Pour passer la prochaine épreuve, je te mets direct un indice 👇</h1>
 
-      <div class="div-texts">
-        <p id="initial-text">“Parfois, il suffit juste de mettre en évidence la réponse, et tout devient aussi clair que de l'eau de roche”</p>
-        <p id="solution"><%= "Surprise ! Copie ce lien dans la barre URL : https://www.findhint.com/enigmas/#{@enigma.id}/chats/welldone/" %></p>
+      <div class="content flex-center flex-column">
+        <h1>Bravo, tu as réussi ! Tu fais désormais parti du top 99%, c’est pas mal 😎 Te voilà déjà à la deuxième épreuve 👇</h1>
+
+        <div class="div-texts">
+          <p id="initial-text">“Il suffit parfois de mettre en évidence la réponse, et tout devient clair comme de l'eau de roche”</p>
+          <p id="solution"><%= "Surprise !!! Copie ce lien dans la barre URL : https://www.findhint.com/enigmas/#{@enigma.id}/chats/welldone/" %></p>
+        </div>
       </div>
     </div>
   </div>

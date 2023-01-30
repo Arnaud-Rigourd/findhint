@@ -15,9 +15,9 @@ class ChatsController < ApplicationController
     respond_to do |format|
 
       if @chat.save
-        format.html {
-          @chat_bot_answers = ["Ce n'est malheureusement pas la bonne réponse", "Bien essayé, mais ce n'est pas ça", "Désolé, mais ce n'est pas la réponse", "Tu as pensé à chercher sur Google ?", "Ce n'est pas ca, mais je te donne un indice : la réponse tient en quatre lettres"]
+        @chat_bot_answers = ["Ce n'est malheureusement pas la bonne réponse. Les images peuvent te mettre sur la voie", "Bien essayé, mais ce n'est pas ça", "Désolé, mais ce n'est pas la réponse", "Si tu ne trouves pas, c'est rien. As-tu pensé à chercher sur Google ?", "Ce n'est pas ca, mais je te donne un indice : la réponse tient en quatre lettres"]
 
+        format.html {
           if @chat.content.downcase == 'rien'
             @chat_bot = Chat.create(content: "Bravo, tu as trouvé ! 🎉🎉🎉 Tu peux désormais passer à la dernière épreuve en cliquant sur le bouton qui vient d'apparaître !", origin: false, enigma_id: @enigma.id)
           else

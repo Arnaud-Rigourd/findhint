@@ -16,6 +16,9 @@ application.register("hint", HintController)
 import NoPositionController from "./no_position_controller"
 application.register("no-position", NoPositionController)
 
+import NotificationsController from "./notifications_controller"
+application.register("notifications", NotificationsController)
+
 import PopoverController from "./popover_controller"
 application.register("popover", PopoverController)
 

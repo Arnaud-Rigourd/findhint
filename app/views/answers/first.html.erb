@@ -7,26 +7,20 @@
       <div class="point"></div>
 
       <div class="landing-frame flex-center flex-column space-around">
-        <h1>BIENVENUE SUR FINDHINT !!!</h1>
+        <h1>FINDHINT</h1>
+        <br />
+        <p>Super ! On est partis pour 4 petites énigmes ! Ne t’inquiete pas, rien de bien méchant (à par la 3ème épreuve peut-être 🤔).</p> <br />
+        <p>Pour chaque épreuve, tu as autant de tentative et de temps que tu souhaites.</p>
 
-        <p>Tu as quelques minutes pour jouer ? (il y a une surprise à la fin ! )</p>
-
-        <div class="yesno-fix">
-          <p>Oui</p>
-          <p>Non</p>
-        </div>
       </div>
 
-      <div class="sub-frame" data-controller="popover">
-        <p>Super ! Pour commencer, donne moi le mot de passe !</p>
+      <div class="sub-frame flex-center flex-column" data-controller="popover">
+        <h3>Afin de commencer, donne moi le mot de passe !</h3>
         <%= render partial:"shared/form_answers", locals: {enigma: @enigma, answer: @answer} %>
 
-        <i class="popover fa-solid fa-circle-question" data-popover-target="popover" data-action="mouseenter->popover#show mouseleave->popover#hide">
-          <div class="arrow hidden" data-popover-target="popoverArrow"></div>
-          <div class="popover__content hidden flex-center" data-popover-target="popoverContent">
-            <p>Un petit indice ? Parfois il suffit de demander les choses poliment...</p>
-          </div>
-        </i>
+
+
+
 
         <p class="sub-text">(Si tu ne trouves vraiment pas, un compliment sincère fera l’affaire)</p>
       </div>

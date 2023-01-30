@@ -1,6 +1,6 @@
 .div-texts {
   position: relative;
-  text-align: center;
+  // text-align: center;
   width: fit-content;
 
   #solution {
@@ -13,5 +13,20 @@
       color: white;
       background-color: black;
     }
+  }
+
+}
+
+.content {
+  width: 100%;
+
+  h1 {
+    text-align: center;
+    width: 70%;
+    margin: 25px auto;
+  }
+
+  p {
+    margin: 25px auto;
   }
 }

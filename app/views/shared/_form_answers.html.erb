@@ -1,8 +1,24 @@
-<div class="container__form">
-  <%= simple_form_for [enigma, answer] do |f| %>
+<div class="container__form" data-controller="notifications">
+  <%= simple_form_for([enigma, answer], data: {
+                                          action:"submit->notifications#submit"
+                                        } )do |f| %>
     <%= f.input :content,
                 label: "Ta réponse ici 👉",
-                placeholder: "Que vas-tu bien pouvoir nous écrire 🤔" %>
+                placeholder: "Vous ne passerez pas 🧙🏻‍♂️...",
+                input_html: {
+                  data: {
+                  notifications_target:"input"
+                  }
+                } %>
     <%= f.submit "Valider" %>
+
+    <i class="popover fa-solid fa-circle-question" data-popover-target="popover" data-action="mouseenter->popover#show mouseleave->popover#hide">
+          <div class="arrow hidden" data-popover-target="popoverArrow"></div>
+          <div class="popover__content hidden flex-center" data-popover-target="popoverContent">
+            <p>Un petit indice ? Parfois il suffit de demander les choses poliment...</p>
+          </div>
+        </i>
+
   <% end %>
+    <div class="error-msg hidden" data-notifications-target="notif">*Ce n'est pas le bon mot de passe (ou ton compliment n'est pas sincère)</div>
 </div>

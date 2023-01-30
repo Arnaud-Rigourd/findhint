@@ -18,3 +18,6 @@ application.register("no-position", NoPositionController)
 
 import WrapperController from "./wrapper_controller"
 application.register("wrapper", WrapperController)
+
+import Popover from 'stimulus-popover'
+application.register('popover', Popover)

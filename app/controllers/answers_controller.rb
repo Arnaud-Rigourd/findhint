@@ -2,7 +2,7 @@ require 'json'
 require 'net/http'
 
 class AnswersController < ApplicationController
-  before_action :set_enigma, only: [:first, :welldone, :create]
+  before_action :set_enigma, only: [:first, :welldone, :create, :firsthint]
 
   def first
     @enigma = Enigma.find(params[:enigma_id])
@@ -31,6 +31,10 @@ class AnswersController < ApplicationController
     else
       return render :new, status: :unprocessable_entity unless @answer.save
     end
+  end
+
+  def firsthint
+    render partial: 'shared/firsthint'
   end
 
   private

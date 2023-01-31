@@ -20,43 +20,49 @@
   </div>
 
 
-  <div class="puzzle margin-auto" data-controller="sortable-puzzle" >
+  <div class="puzzle margin-auto" data-controller="sortable-puzzle" data-sortable-puzzle-sort-url-value="<%= sort_enigma_tiles_path(@enigma) %>">
 
-    <div class="tile" data-sortable-puzzle-target="tile">
+    <% @tiles.each do |t| %>
+      <div class="tile" data-sortable-puzzle-target="tile" data-tile-id=<%= t.id %> >
+        <%= image_tag t.image, alt:"puzzle" %>
+      </div>
+    <% end %>
+
+    <%# <div id="1" class="tile" data-sortable-puzzle-target="tile">
       <p>1</p>
     </div>
 
-    <div class="tile" data-sortable-puzzle-target="tile">
+    <div id="2" class="tile" data-sortable-puzzle-target="tile">
       <p>2</p>
     </div>
 
-    <div class="tile" data-sortable-puzzle-target="tile">
+    <div id="3" class="tile" data-sortable-puzzle-target="tile">
       <p>3</p>
     </div>
 
-    <div class="tile" data-sortable-puzzle-target="tile">
+    <div id="4" class="tile" data-sortable-puzzle-target="tile">
       <p>4</p>
     </div>
 
-    <div class="tile" data-sortable-puzzle-target="tile">
+    <div id="5" class="tile" data-sortable-puzzle-target="tile">
       <p>5</p>
     </div>
 
-    <div class="tile" data-sortable-puzzle-target="tile">
+    <div id="6" class="tile" data-sortable-puzzle-target="tile">
       <p>6</p>
     </div>
 
-    <div class="tile" data-sortable-puzzle-target="tile">
+    <div id="7" class="tile" data-sortable-puzzle-target="tile">
       <p>7</p>
     </div>
 
-    <div class="tile" data-sortable-puzzle-target="tile">
+    <div id="8" class="tile" data-sortable-puzzle-target="tile">
       <p>8</p>
     </div>
 
-    <div class="tile" data-sortable-puzzle-target="tile">
+    <div id="9" class="tile" data-sortable-puzzle-target="tile">
       <p>9</p>
-    </div>
+    </div> %>
 
   </div>
 </main>

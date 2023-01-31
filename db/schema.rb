@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_29_125931) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_31_164120) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -38,6 +38,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_29_125931) do
     t.string "origin"
   end
 
+  create_table "tiles", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "enigma_id", null: false
+    t.string "image"
+    t.bigint "position"
+    t.index ["enigma_id"], name: "index_tiles_on_enigma_id"
+  end
+
   add_foreign_key "answers", "enigmas"
   add_foreign_key "chats", "enigmas"
+  add_foreign_key "tiles", "enigmas"
 end

@@ -17,5 +17,10 @@ Rails.application.routes.draw do
         get :welldone, to: 'chats#welldone'
       end
     end
+    resources :tiles, only: [:create] do
+      collection do
+        post :sort
+      end
+    end
   end
 end

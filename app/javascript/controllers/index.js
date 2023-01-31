@@ -22,5 +22,8 @@ application.register("notifications", NotificationsController)
 import PopoverController from "./popover_controller"
 application.register("popover", PopoverController)
 
+import SortablePuzzleController from "./sortable_puzzle_controller"
+application.register("sortable-puzzle", SortablePuzzleController)
+
 import WrapperController from "./wrapper_controller"
 application.register("wrapper", WrapperController)

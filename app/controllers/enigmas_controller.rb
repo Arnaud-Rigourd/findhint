@@ -18,6 +18,8 @@ class EnigmasController < ApplicationController
   end
 
   def final
+    @tiles = Tile.where(enigma_id: @enigma.id)
+    @tiles = @enigma.tiles.order(:position)
   end
 
   private

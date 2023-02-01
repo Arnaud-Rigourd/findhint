@@ -6,13 +6,38 @@ main {
 }
 
 .puzzle {
-  width: fit-content;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
+  width: 100%;
+  height: 340px;
+
+  .tiles {
+    position: relative;
+    width: fit-content;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    opacity: 1;
+    transition: all 500ms linear;
+  }
+
+  .contact-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: opacity 500ms linear;
+    width: max-content;
+    z-index: 1;
+
+    a {
+      color: $dark;
+      text-decoration: none;
+    }
+  }
 }
 
 .tile {
+  height: 100px;
 
   img {
     width: 100px;

@@ -22,20 +22,25 @@ export default class extends Controller {
         if (data.inserted_message) {
           this.messagesTarget.insertAdjacentHTML("beforeend", data.inserted_message)
 
-          if (typeof(data.inserted_bot_message) !== 'undefined') {
-            this.messagesTarget.insertAdjacentHTML("beforeend", data.inserted_bot_message)
-          } else if (typeof(data.inserted_close_answer) !== 'undefined') {
-            this.messagesTarget.insertAdjacentHTML("beforeend", data.inserted_close_answer)
-          }
+          setTimeout(() => {
+            if (typeof(data.inserted_bot_message) !== 'undefined') {
+              this.messagesTarget.insertAdjacentHTML("beforeend", data.inserted_bot_message)
+            } else if (typeof(data.inserted_close_answer) !== 'undefined') {
+              this.messagesTarget.insertAdjacentHTML("beforeend", data.inserted_close_answer)
+            }
 
-          if (typeof(data.inserted_button) !== 'undefined') {
-            this.nextStageBtnTarget.innerHTML = `${data.inserted_button}`
-          }
-
+            if (typeof(data.inserted_button) !== 'undefined') {
+              this.nextStageBtnTarget.innerHTML = `${data.inserted_button}`
+            }
+          }, 300);
         }
-        this.formTarget.outerHTML = data.form
         this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
-        this.formInputTarget.focus()
+
+        setTimeout(() => {
+          this.formTarget.outerHTML = data.form
+          this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
+          this.formInputTarget.focus()
+        }, 310);
       })
 
   }

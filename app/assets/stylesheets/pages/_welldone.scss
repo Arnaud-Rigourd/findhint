@@ -3,6 +3,11 @@
   transform-style: preserve-3d;
   z-index: -5;
   transform: translateZ(-10px) scale(2);
+
+  h1 {
+    margin: auto 15px;
+    text-align: center;
+  }
 }
 
 .header-scroll {
@@ -34,7 +39,7 @@
 
     &:nth-child(odd){
       margin: 110px 0;
-      font-size: 18px;
+      font-size: 22px;
       // parallax
       transform-style: preserve-3d;
       z-index: -5;
@@ -43,6 +48,7 @@
 
     &:nth-child(even){
       margin: 55px 0;
+      font-size: 20px;
       // parallax
       transform-style: preserve-3d;
       z-index: -5;
@@ -70,4 +76,8 @@
     justify-content: space-between;
     width: 100%;
   }
+}
+
+.blank {
+  height: 120px;
 }

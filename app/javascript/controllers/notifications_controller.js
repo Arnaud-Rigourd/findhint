@@ -19,9 +19,11 @@ export default class extends Controller {
         }
       })
 
-      if (this.validatingArray.length === 0) {
-        this.notifTarget.classList.remove('hidden')
-      }
+      setTimeout(() => {
+        if (this.validatingArray.length === 0) {
+          this.notifTarget.classList.remove('hidden')
+        }
+      }, 300);
 
     } else {
       e.preventDefault()

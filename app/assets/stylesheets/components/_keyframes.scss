@@ -12,20 +12,20 @@
 
 @keyframes alternateBackground {
   0%, 50% {
-    background-color: black;
-    color: white;
+    background-color: $dark;
+    color: $light;
   }
   51%, 100% {
-    background-color: white;
-    color: black;
+    background-color: $light;
+    color: $dark;
   }
 }
 
 @keyframes alternateLinkColor {
   0%, 50% {
-    color: white;
+    color: $light;
   }
   51%, 100% {
-    color: black;
+    color: $dark;
   }
 }

@@ -5,7 +5,6 @@ export default class extends Controller {
   static targets = ["scroll", "scrollItems"]
 
   connect() {
-    // console.log(this.scrollTarget)
   }
 
   hide(){

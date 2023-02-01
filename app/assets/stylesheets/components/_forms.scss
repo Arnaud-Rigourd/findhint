@@ -18,9 +18,9 @@ form {
     }
 
     &[type=submit] {
-      background-color: black;
+      background-color: $dark;
       border: none;
-      color: white;
+      color: $light;
       font-size: 12px;
       padding: 0 10px;
       width: max-content;

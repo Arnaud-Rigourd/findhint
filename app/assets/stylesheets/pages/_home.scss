@@ -6,7 +6,7 @@
 
 	a{
 		&:visited {
-      color: black;
+      color: $dark;
     }
   }
 }
@@ -38,7 +38,7 @@ body {
 }
 
 .frame {
-  border: 8px solid black;
+  border: 8px solid $dark;
   height: 80vh;
   margin: 5vh auto;
   padding: 10px 15px;
@@ -54,7 +54,7 @@ body {
       position: absolute;
       width: 10px;
       height: 10px;
-      background-color: black;
+      background-color: $dark;
       border-radius: 50%;
 
       &:first-child {

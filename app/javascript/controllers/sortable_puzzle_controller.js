@@ -27,7 +27,7 @@ export default class extends Controller {
 
         // Check if tiles are in the correct order
 
-        this.rightOrder = [5, 2, -6, 5, -7, 4, -1, 2]
+        this.rightOrder = [-5,	7,	-6,	5,	-7,	4,	-1,	2]
         this.currentOrder = []
         this.rightCurrentOrder = []
         this.rightCurrentOrderSum = 0
@@ -47,13 +47,8 @@ export default class extends Controller {
         })
 
         if (this.rightCurrentOrderSum === 0) {
-
-          // utiliser setTimeOut pour effectuer les différentes étapes de l'animation :
-            // supprimer le grid gap : element.style = "grid-gap: 0"
-
           this.tilesTarget.style = "grid-gap: 0"
 
-            // Ajouter un filtre sur les images : elements.forEach((e) => { e.style = "filter: brightness(0.5)" })
           setTimeout(() => {
             this.tileTargets.forEach((tile) => {
               tile.style = "opacity: 0.5"
@@ -62,10 +57,6 @@ export default class extends Controller {
             this.contactMessageTarget.classList.remove('hidden')
             this.contactMessageTarget.style.opacity = "1"
           }, 580);
-
-            // Faire apparaitre le texte : "Contacte moi" au-dessus de l'image => Remplacer la div existante par une div avec un background reprenant le puzzle ?
-
-          console.log('Tu as gagné champion !')
         }
       }
     })

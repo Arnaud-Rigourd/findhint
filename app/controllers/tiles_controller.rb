@@ -6,7 +6,7 @@ class TilesController < ApplicationController
     @count = 1
 
     9.times do
-      @tile = Tile.create(enigma_id: @enigma.id, position: @count, image: "heart-transformed#{@count}.png")
+      @tile = Tile.create(enigma_id: @enigma.id, position: @count, image: "final-photo#{@count}.jpg")
       @count += 1
     end
 

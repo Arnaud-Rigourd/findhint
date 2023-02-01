@@ -14,7 +14,7 @@ main {
     width: fit-content;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
+    grid-gap: 20px;
     opacity: 1;
     transition: all 500ms linear;
   }
@@ -37,11 +37,11 @@ main {
 }
 
 .tile {
-  height: 100px;
+  height: $tile-size;
 
   img {
-    width: 100px;
-    height: 100px;
+    width: $tile-size;
+    height: $tile-size;
     cursor: grab;
 
     &:active {

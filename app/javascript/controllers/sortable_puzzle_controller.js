@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 import Sortable from "sortablejs"
 
 export default class extends Controller {
-  static targets = ['tile']
+  static targets = ['tile', 'tiles', 'contactMessage']
   static values = { sortUrl: String }
 
   connect() {
@@ -20,34 +20,25 @@ export default class extends Controller {
         const formData = new FormData();
         formData.append("tileOrdered", this.tileOrdered)
 
-        // console.log(this.tileOrdered)
-
         fetch(this.sortUrlValue, {method: "POST",
           headers: { Accept: "application/json", "X-CSRF-Token": csrfToken },
           body: formData
         })
 
-        // 29, 34, 36, 30, 35, 28, 32, 31, 33
-        // this.tileOrdered[1] - this.tileOrdered[0] === 5
-        // [5, 2, -6, 5, -7, 4, -1, 2]
+        // Check if tiles are in the correct order
 
         this.rightOrder = [5, 2, -6, 5, -7, 4, -1, 2]
         this.currentOrder = []
+        this.rightCurrentOrder = []
+        this.rightCurrentOrderSum = 0
 
         for (let i = 0; i < 8; i++) {
-          // this.currentNum = this.tileOrdered[i + 1] - this.tileOrdered[i]
           this.currentOrder.push(this.tileOrdered[i + 1] - this.tileOrdered[i])
         }
-        // console.log(this.currentOrder)
-        this.rightCurrentOrder = []
 
         for (let i = 0; i < 8; i++) {
           this.rightCurrentOrder.push(this.rightOrder[i] - this.currentOrder[i])
         }
-
-        console.log(this.rightCurrentOrder)
-
-        this.rightCurrentOrderSum = 0
 
         this.rightCurrentOrder.forEach((item) => {
           if (item !== 0) {
@@ -56,7 +47,24 @@ export default class extends Controller {
         })
 
         if (this.rightCurrentOrderSum === 0) {
-          // Insérer le message dans le DOM
+
+          // utiliser setTimeOut pour effectuer les différentes étapes de l'animation :
+            // supprimer le grid gap : element.style = "grid-gap: 0"
+
+          this.tilesTarget.style = "grid-gap: 0"
+
+            // Ajouter un filtre sur les images : elements.forEach((e) => { e.style = "filter: brightness(0.5)" })
+          setTimeout(() => {
+            this.tileTargets.forEach((tile) => {
+              tile.style = "opacity: 0.5"
+            })
+
+            this.contactMessageTarget.classList.remove('hidden')
+            this.contactMessageTarget.style.opacity = "1"
+          }, 580);
+
+            // Faire apparaitre le texte : "Contacte moi" au-dessus de l'image => Remplacer la div existante par une div avec un background reprenant le puzzle ?
+
           console.log('Tu as gagné champion !')
         }
       }

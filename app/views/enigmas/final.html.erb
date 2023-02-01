@@ -20,13 +20,17 @@
   </div>
 
 
-  <div class="puzzle margin-auto" data-controller="sortable-puzzle" data-sortable-puzzle-sort-url-value="<%= sort_enigma_tiles_path(@enigma) %>">
+  <div class="puzzle margin-auto">
 
-    <% @tiles.each do |t| %>
-      <div class="tile" data-sortable-puzzle-target="tile" data-tile-id=<%= t.id %> >
-        <%= image_tag t.image, alt:"puzzle" %>
-      </div>
-    <% end %>
+    <div class="tiles margin-auto flex-center" data-controller="sortable-puzzle" data-sortable-puzzle-target="tiles" data-sortable-puzzle-sort-url-value="<%= sort_enigma_tiles_path(@enigma) %>">
+      <h2 class="contact-message hidden" data-sortable-puzzle-target="contactMessage"><a href="mailto:arnaud.rigourd@hotmail.fr">Contacte moi !</a></h2>
+
+      <% @tiles.each do |t| %>
+        <div class="tile" data-sortable-puzzle-target="tile" data-tile-id=<%= t.id %> >
+          <%= image_tag t.image, alt:"puzzle" %>
+        </div>
+      <% end %>
+    </div>
 
   </div>
 </main>

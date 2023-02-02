@@ -6,7 +6,9 @@
   height: 600px;
 
   &__text {
-    // margin: 0 auto 50px auto;
+    p {
+      margin-bottom: 15px;
+    }
   }
 }
 

@@ -17,6 +17,18 @@
 
     &:first-child {
       animation: alternateBackground 1500ms linear reverse infinite;
+
+      &:hover {
+        animation-play-state: paused;
+
+        & > a {
+          animation-play-state: paused;
+        }
+      }
+
+      &:hover + p:last-child {
+        animation-play-state: paused;
+      }
     }
 
     &:last-child {
@@ -26,6 +38,7 @@
 
       &:hover {
         cursor: pointer;
+        animation-play-state: paused;
       }
     }
    }

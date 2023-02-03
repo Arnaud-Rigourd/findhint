@@ -29,4 +29,8 @@ export default class extends Controller {
       e.preventDefault()
     }
   }
+
+  hideNotif() {
+    this.notifTarget.classList.add('hidden')
+  }
 }

@@ -7,7 +7,8 @@
                 placeholder: "Vous ne passerez pas 🧙🏻‍♂️...",
                 input_html: {
                   data: {
-                  notifications_target:"input"
+                  notifications_target:"input",
+                  action:"keyup->notifications#hideNotif"
                   }
                 } %>
     <%= f.submit "Valider" %>
@@ -15,7 +16,7 @@
     <i class="popover fa-solid fa-circle-question" data-popover-target="popover" data-action="mouseenter->popover#show mouseleave->popover#hide">
           <div class="arrow hidden" data-popover-target="popoverArrow"></div>
           <div class="popover__content hidden flex-center" data-popover-target="popoverContent">
-            <p>Un petit indice ? Parfois il suffit de demander les choses poliment...</p>
+            <p class="sub-text">Un petit indice ? Parfois il suffit de demander les choses poliment...</p>
           </div>
         </i>
 

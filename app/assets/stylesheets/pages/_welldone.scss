@@ -50,6 +50,10 @@
       transform-style: preserve-3d;
       z-index: -5;
       transform: translate3d(-33vw, 46vh, -10px) scale(2);
+
+      @media screen and (max-width: 600px) {
+        font-size: 16px;
+      }
     }
 
     &:nth-child(even) {
@@ -60,6 +64,10 @@
       transform-style: preserve-3d;
       z-index: -5;
       transform: translate3d(-19vw, 45vh, -5px) scale(1.5);
+
+      @media screen and (max-width: 600px) {
+        font-size: 14px;
+      }
     }
   }
 }
@@ -87,4 +95,8 @@
 
 .blank {
   height: 120px;
+
+  @media screen and (max-width: 550px) {
+    display: none;
+  }
 }

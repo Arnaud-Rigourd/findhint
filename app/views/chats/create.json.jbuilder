@@ -2,7 +2,7 @@ if @chat.persisted?
   json.form render(partial: "shared/form_chat", formats: :html, locals: {enigma: @enigma, chat: Chat.new})
   json.inserted_message render(partial: "shared/new_message", formats: :html, locals: {c: @chat})
 
-  if @chat.content.downcase == 'rien'
+  if @chat.content.downcase.gsub(/[\s\W]/, '') == 'rien'
     json.inserted_bot_message render(partial: "shared/chatbot_correct_answer", formats: :html, locals: {chat_bot: @chat_bot})
     json.inserted_button render(partial:"shared/next_stage_btn_ajax", formats: :html, locals: {enigma: @enigma})
 

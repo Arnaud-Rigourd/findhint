@@ -18,7 +18,7 @@ class ChatsController < ApplicationController
         @chat_bot_answers = ["Ce n'est malheureusement pas la bonne réponse. Les images peuvent te mettre sur la voie", "Bien essayé, mais ce n'est pas ça", "Si tu ne trouves pas, c'est rien. As-tu pensé à chercher sur Google ?", "Ce n'est pas ca, mais je te donne un indice : la réponse tient en quatre lettres", "Vide ton esprit, ne penses plus à rien..."]
 
         format.html {
-          if @chat.content.downcase == 'rien'
+          if @chat.content.downcase.gsub(/[\s\W]/, '') == 'rien'
             @chat_bot = Chat.create(content: "Bravo, tu as trouvé ! 🎉🎉🎉 Tu peux désormais passer à la dernière épreuve en cliquant sur le bouton qui vient d'apparaître !", origin: false, enigma_id: @enigma.id)
           else
             @chat_bot = Chat.create(content: @chat_bot_answers.sample, origin: false, enigma_id: @enigma.id)

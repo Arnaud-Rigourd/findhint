@@ -3,6 +3,7 @@
 	list-style: none;
 	margin: 0;
 	padding: 0;
+  transition: font-size 300ms linear;
 
 	a{
 		&:visited {
@@ -11,16 +12,48 @@
   }
 }
 
-.h1 {
+h1 {
   font-size: 4.1vh;
+
+  @media screen and (max-width: 900px) {
+    font-size: 24px;
+    margin: 0 15px;
+    text-align: center;
+  }
 }
 
 h3 {
   font-size: 2.4vh;
+
+  @media screen and (max-width: 1050px) {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 600px) {
+    font-size: 14px;
+  }
+
+  @media screen and (max-width: 460px) {
+    font-size: 12px;
+  }
 }
 
 p, a {
   font-size: 2vh;
+
+  @media screen and (max-width: 900px) {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 600px) {
+    font-size: 12px;
+  }
+
+  @media screen and (max-width: 460px) {
+    font-size: 10px;
+  }
 }
 
 .flex-center {
@@ -96,6 +129,19 @@ body {
 
 .sub-text {
   font-size: 12px;
+
+  @media screen and (max-width: 900px) {
+    font-size: 10px;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 600px) {
+    font-size: 8px;
+  }
+
+  @media screen and (max-width: 460px) {
+    font-size: 6px;
+  }
 }
 
 em {

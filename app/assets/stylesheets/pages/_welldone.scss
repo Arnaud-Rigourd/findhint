@@ -7,6 +7,10 @@
   h1 {
     margin: auto 15px;
     text-align: center;
+
+    @media screen and (max-width: 860px) {
+      font-size: 24px;
+    }
   }
 }
 

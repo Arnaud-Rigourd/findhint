@@ -1,20 +1,50 @@
-.container__form {
-}
 form {
   display: flex;
+
+  @media screen and (max-width: 1050px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .input.answer_content {
+    @media screen and (max-width: 830px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
 
   label {
     font-size: 14px;
     margin-right: 5px;
+
+    @media screen and (max-width: 1050px) {
+      font-size: 12px;
+      margin: 8px 0;
+    }
   }
 
   input {
     font-family: $body-font;
 
+    @media screen and (max-width: 1050px) {
+      margin: 8px 0;
+    }
+
     &[name="answer[content]"] {
       font-size: 10px;
       min-width: 300px;
       padding: 5px 10px;
+
+      @media screen and (max-width: 1050px) {
+        font-size: 8px;
+      }
+
+      @media screen and (max-width: 620px) {
+        min-width: 120px;
+        width: 45vw;
+      }
     }
 
     &[type=submit] {
@@ -24,6 +54,11 @@ form {
       font-size: 12px;
       padding: 0 10px;
       width: max-content;
+
+      @media screen and (max-width: 1050px) {
+        font-size: 10px;
+        margin: 8px 0;
+      }
     }
   }
 }

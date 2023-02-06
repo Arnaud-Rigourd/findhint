@@ -9,6 +9,10 @@ main {
   width: 100%;
   height: 700px;
 
+  @media screen and (max-width: 740px) {
+    height: auto;
+  }
+
   .tiles {
     position: relative;
     width: fit-content;
@@ -17,6 +21,10 @@ main {
     grid-gap: 20px;
     opacity: 1;
     transition: all 500ms linear;
+
+    @media screen and (max-width: 740px) {
+      grid-gap: 10px;
+    }
   }
 
   .contact-message {
@@ -39,10 +47,19 @@ main {
 .tile {
   height: $tile-size;
 
+  @media screen and (max-width: 740px) {
+    height: $tile-size-responsive;
+  }
+
   img {
     width: $tile-size;
     height: $tile-size;
     cursor: grab;
+
+    @media screen and (max-width: 740px) {
+      width: $tile-size-responsive;
+      height: $tile-size-responsive;
+    }
 
     &:active {
       cursor: grabbing;

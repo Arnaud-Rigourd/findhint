@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="wrapper"
 export default class extends Controller {
-  static targets = ["scroll", "scrollItems"]
+  static targets = ["scroll", "scrollItems", "comingSoon"]
 
   connect() {
   }
@@ -14,4 +14,6 @@ export default class extends Controller {
       this.scrollTarget.style = "opacity: 1"
     }
   }
+
+
 }

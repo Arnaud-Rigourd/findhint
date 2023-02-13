@@ -42,7 +42,125 @@
   </div>
   </div>
 
-  <div class="reveal hidden" data-wrapper-target="siteInfo">
-    <h1>Infos</h1>
+  <div class="reveal" data-wrapper-target="siteInfo">
+    <h3 class="reveal__title" data-action="click->wrapper#show">Pour les plus curieux</h3>
+    <div class="reveal__content" data-wrapper-target="revealContent">
+      <div class="reveal__content--text">
+        <p>Si tu lis ceci, c'est que tu as passé toutes les épreuves. Félicitation ! Tu viens de découvrir FindHint, un site d'énigmes créé par mes soins, Arnaud Rigourd, développeur full stack.</p>
+
+        <p>Tu l'auras remarqué, la font a changé. Je suis d'accord, ça fait un petit choc, mais pour des questions de lisibilité, cette font sera plus adaptée. Tes yeux me remercieront 😉</p>
+
+        <p>Ci-dessous, je t'explique les points clés de chaque épreuve afin de te permettre d'en comprendre les mécanismes.</p>
+
+        <p>Sur ce, je n'ai plus qu'à te souhaiter bonne lecture !</p>
+      </div>
+    </div>
+
+    <h3 class="reveal__title" data-action="click->wrapper#show">Création et conception des énigmes</h3>
+    <div class="reveal__content" data-wrapper-target="revealContent">
+      <%= image_tag "figma.webp", alt:"figma" %>
+      <div class="reveal__content--text">
+        <p>Comme pour chaque projet, les fondations du site sont nées sur notion. J’ai commencé par poser toutes les idées sous forme de bullet point : d’un coté les idées créatives (relatives aux énigmes), et de l’autre les hard skills nécessaires pour mettre en place chacune des énigmes.</p>
+
+        <p>Une fois les idées réunies, place au visuel, place à <em>Figma</em>. On peut voir sur l’image ci-contre que le rendu est assez fidèle à la maquette de départ, à 2-3 exceptions près. La charte graphique étant relativement simple, cette étape a été assez rapide. Plus qu’à schématiser la DB, et je pourrais passer au code.</p>
+      </div>
+    </div>
+
+    <h3 class="reveal__title" data-action="click->wrapper#show">Le schema de DB</h3>
+    <div class="reveal__content" data-wrapper-target="revealContent">
+      <%= image_tag "db.webp", alt:"database" %>
+      <div class="reveal__content--text">
+        <p>En premier lieu, je suis parti sur une DB très simple avec une seule table que j’ai nommé "Enigma" par souci de compréhension. En effet, sachant que j’allais utiliser l’URL dans l’une de mes énigmes, je ne souhaitais pas avoir des termes peu cohérents tels que "pages" ou "answers", car oui, cette table aurait du s’appeler "answers" car destinée à stocker les réponses des utilisateurs. Ce sera d’ailleurs la même logique qui guidera le choix du nom de mes tables tout au long de la création du site.</p>
+
+        <p>Rapidement, je me rends compte qu’une seule table de suffira pas, notamment si plusieurs utilisateurs viennent visiter le site simultanément. La principale problématique qui se posait alors était la suivante : Comment offrir à chaque utilisateur un parcours unique sans avoir besoin de se connecter (la création d’un compte user est un réel frein et détériore l’expérience utilisateur sur ce type de site). La solution à donc été de revoir le schema de DB, en y ajoutant une table "answers" ainsi qu’une table "chat" pour, respectivement, la première et troisième énigme. Ces deux tables étant liées à la table "enigmas", chaque user pouvait désormais bénéficier de leur propre parcours sans interférer avec les réponses des autres users. Et afin de les faire entre dans leur propre table "enigmas", un simple clique sur le bouton "Oui" sur la landing page leur crée une instance de "enigmas". Et s’ils cliquent sur "Non" … Surprise ! 😉</p>
+      </div>
+    </div>
+
+    <h3 class="reveal__title" data-action="click->wrapper#show">1ère énigme : Le mot de passe</h3>
+    <div class="reveal__content" data-wrapper-target="revealContent">
+      <%= image_tag "perspective.webp", alt:"perspective api" %>
+      <div class="reveal__content--text">
+        <p>Vous avez peut-être passé cette épreuve sans trop d’encombre, ou même sans vraiment savoir comment vous avez réussi ? C’est normal, même si ce n’était pas vraiment l'objectif. Je m’explique : il ya deux façons de passer cette épreuve. La première consiste à demander poliment, en utilisant des termes déterminés dans un array de réponses acceptées : ["please", "stp", 'svp', "s'il te plait", "s'il te plaît", "s il te plait", "s il te plaît", "s'il-te-plait", "s'il-te-plaît"]</p>
+*Ajouter le hint en image à coté
+
+        <p>La deuxième manière de passer est la plus intéressante. En effet, si l’utilisateur ne voit pas l’indice, il est indiqué qu’il peut faire un compliment sincère. Mais comment ça marche exactement ? C’est l’API de Google "Perspective" qui permet de traiter les input utilisateur et leur donner un score de "Toxicité". Selon le score, vous pouviez passer à l’étape suivante ou non. Là où l’algorithme n’est pas optimisé pour cette épreuve, c’est qu’il a été conçu pour détecter les commentaires toxiques des internautes. Autrement dit, il fait difficilement la différence entre un compliment et un commentaire neutre. C’est la principale raison pour laquelle tu n’as peut-être pas compris comment tu es passé à l’épreuve suivante. Malgré cela, je trouvais l’utilisation d’une telle API intéressante.</p>
+      </div>
+    </div>
+
+    <h3 class="reveal__title" data-action="click->wrapper#show">2ème énigme : La mise en évidence</h3>
+    <div class="reveal__content" data-wrapper-target="revealContent">
+      <div class="reveal__content--text">
+        <p>J’ai découvert cet effet sur https://www.akufen.ca/fr/studio, et souhaitais le dupliquer. Cependant, leur façon de faire ne me convenait pas tout à fait par rapport à l’utilisation que je souhaitais en faire. J’ai ainsi pu recréer cet effet d’une nouvelle manière. Un tour dans la doc de Mozilla m’a permit de finaliser l’effet de surlignage. Pour plus d’information, n’hésitez pas à faire un tour dans le code source sur mon GitHub <a href="https://github.com/Arnaud-Rigourd">(https://github.com/Arnaud-Rigourd)</a>.</p>
+      </div>
+    </div>
+
+    <h3 class="reveal__title" data-action="click->wrapper#show">3ème énigme : Tout ou rien</h3>
+    <div class="reveal__content" data-wrapper-target="revealContent">
+      <%= image_tag "chat.webp", alt:"chat" %>
+      <div class="reveal__content--text">
+        <p>Les citations sont uniquement un moyen d’intégrer un peu de parallax au sein du site. Elles n’ont aucun rapport avec l’énigme, mais l’intégration d’information inutile reste pertinent dans un site d’énigmes.</p>
+
+        <p>Nous arrivons désormais au Chat : Place à l’AJAX !
+        Pour le Chat, j’y suis allé méthodiquement : on s’assure d’abord que le back fonctionne, puis on y ajoutera de l’AJAX pour une meilleure expérience utilisateur.</p>
+
+        <p>En ce qui concerne le back, 3 scenari ont été pris en compte :</p>
+        <ol>
+          <li>La bonne réponse : "rien" (avec une petite regex et quelques méthodes ruby histoire de ne pas trop pénaliser le user : downcase.gsub(/[\s\W]/, ‘’). Par contre, il ne fallait pas que "j’en sais rien" permette de passer, raison pour laquelle je n’ai pas opté pour un .include? !</li>
+          <li>Une mauvaise réponse qui aurait pu être bonne. Je m’explique : les enfants, les humains, la vie etc… sont des réponses intéressantes dans la réflexion. Pour cette raison, un message spécifique leur est destiné.</li>
+          <li>Toutes les autres réponses. Un panel de 5 réponses aléatoires est prévu à cet effet, 2 d’entre elles sont neutres, 2 donnent un indice, et une indique de chercher la réponse sur google afin que le user ne reste pas indéfiniment bloqué (ce n’est pas le but du site).</li>
+        </ol>
+
+        <p>Enfin, tout fonctionne, mais chaque réponse rafraîchit la page… On ajoute un peu d’AJAX avec Jbuilder, on parsème de settimeout pour améliorer l’UX (cela ajoute un léger délai de réponse de la part du bot), et le tour est joué !</p>
+      </div>
+    </div>
+
+    <h3 class="reveal__title" data-action="click->wrapper#show">4ème énigme : Le grand final !</h3>
+    <div class="reveal__content" data-wrapper-target="revealContent">
+      <%= image_tag "code.webp", alt:"code" %>
+      <div class="reveal__content--text">
+        <p>Pour l’épreuve finale, je ne voulais pas quelque chose de compliqué, car la précédente épreuve l’était déjà bien assez. C’est pour cette raison que j’ai mis en place un simple puzzle. L’objectif était multiple :</p>
+
+        <ul>
+          <li>Finir sur une note légère</li>
+          <li>Retrouver à nouveau de l’AJAX afin de rendre l'exercice intéressant d’un point de vu développeur</li>
+          <li>Surprendre l’utilisateur avec une photo de moi à la fin, pour une prise de contact 😁 Car oui, ce site a été conçu afin de montrer, via une interface ludique, mes capacités en tant que dévelopeur full stack sur RoR</li>
+        </ul>
+
+        <p>La principale difficulté résidait dans la manière de détecter l’ordre du puzzle et ainsi vérifier le bon ordre des tuiles. Voici la méthode que j’ai utilisé :</p>
+
+        <p>Dans un premier temps, j’ai déclarer un array avec la "combinaison gagnante" : rightOrder = [-5,  7,  -6, 5,  -7, 4,  -1, 2]
+        Dans cet array, chaque index correspond à la soustraction de l’index[n] - index[n + 1]. n correspond à l’ID d’une tuile. Pourquoi ne pas utiliser directement l’ID ? J’aurais aimé indiquer l’ordre des tuiles via leur ID unique en DB, cependant, pour chaque user, l’ID des tuiles est effectivement unique. En d’autres termes, le user x aura des tuiles avec les ID 1, 2, 3..9, et le user y aura des tuiles avec les ID 10, 11, 12..18. Cependant, l’ordre reste le même et les ID sont des multiples de 9 puisque le puzzle est composé de 9 tuiles. Ainsi, l’écart entre les ID ne change pas.</p>
+        <p>Parti de ce constat, je déclare désormais un nouveau tableau chargé de stocker la position de chaque tuile au "mouseup" et push le résultat de index[n] - index[n+1] dans un nouvel array nommé "currentOrder".</p>
+
+        <p>J’ai donc 2 tableaux : rightOrder qui fait office de combinaison gagnante, et currentOrder, que l’on va pouvoir comparer à right order pour vérifier si le user a gagné ou non.</p>
+
+        <p>Comment comparer les tableaux ? Je suis parti sur une simple soustraction des index. Si le résultat est 0, alors les tableaux sont identiques.</p>
+
+        <p>Dans un premier temps, j’ai stocké toutes les soustractions dans un nouvel array. L’idée étant que si les combinaisons correspondaient, la somme du nouveau tableau (.sum) se porterait à 0. Cependant, certaines combinaisons telles que [0, 0, 0, +2, +8, -5, -5, 0] donnaient également 0, alors que l’ordre n’était pas respecté. Il fallait donc ajouter une condition pour être certain que toutes les soustractions vérifiaient bien un score de 0. C’est ainsi qu’est apparue la variable "rightCurrentOrderSum" chargé d’ajouter +1 si le score est différent de 0, et +0 si le score est égal à 0. Ainsi, à la fin de l’itération, si le score final est égal à 0, cela signifie que les tuiles sont dans le bon ordre.</p>
+      </div>
+    </div>
+
+    <h3 class="reveal__title" data-action="click->wrapper#show">Dernière étape : Les tests utilisateurs avec Hotjar</h3>
+    <div class="reveal__content" data-wrapper-target="revealContent">
+      <div class="reveal__content--text">
+        <p>La dernière étape et pas des moindres : le test utilisateur. Afin de vérifier le parcours utilisateur ainsi que le niveau de difficulté des énigmes, j’ai testé le site avec des proches, en utilisant Hotjar, une solution de tracking permettant de visualiser le comportement du user, et ainsi vérifier la bonne ergonomie du site. Grâce à ces tests, j’ai pu modifier quelques éléments afin d’offrir l’expérience que tu viens d’expérimenter.</p>
+      </div>
+    </div>
+
+    <h3 class="reveal__title" data-action="click->wrapper#show">Coordonnées</h3>
+    <div class="reveal__content" data-wrapper-target="revealContent">
+      <div class="reveal__content--text">
+        <p>Si l’expérience t’a plu et que tu souhaites en savoir plus sur mon travail, n’hésites pas à faire un tour sur :</p>
+        <ul>
+          <li>Mon Portfolio : <a href="https://www.arnaud-rigourd.com/">https://www.arnaud-rigourd.com/</a></li>
+          <li>Mon GitHub : <a href="https://github.com/Arnaud-Rigourd">https://github.com/Arnaud-Rigourd</a></li>
+          <li>Mon Linkedin : <a href="https://www.linkedin.com/in/arnaudrigourd/">https://www.linkedin.com/in/arnaudrigourd/</a></li>
+          <li>Mon téléphone : 06 88 61 24 83</li>
+          <li>Mon Mail : <a href="mailto:arnaud.rigourd@hotmail.fr">arnaud.rigourd@hotmail.fr</a></li>
+        </ul>
+      </div>
+      <%= image_tag "thank-you.webp", class:"last-image", alt:"thank-you" %>
+    </div>
+
   </div>
 </main>

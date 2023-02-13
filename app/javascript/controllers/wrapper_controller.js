@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="wrapper"
 export default class extends Controller {
-  static targets = ["scroll", "siteInfo", "contactMessage"]
+  static targets = ["scroll", "siteInfo", "contactMessage", "revealContent"]
 
   connect() {
   }
@@ -27,6 +27,16 @@ export default class extends Controller {
       } else {
         this.scrollTargets['1'].style = "opacity: 1"
       }
+    }
+  }
+
+  show(e) {
+    this.targetHeight = e.target.nextElementSibling.offsetHeight
+
+    if(this.targetHeight === 0) {
+      e.target.nextElementSibling.style.height = "fit-content"
+    } else {
+      e.target.nextElementSibling.style.height = 0
     }
   }
 }

@@ -75,3 +75,52 @@ main {
     }
   }
 }
+
+.reveal {
+  margin: 5vh auto;
+  width: 90vw;
+
+  &__title {
+    border-bottom: 1px $dark solid;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding: 0 10px;
+
+    &:hover {
+      cursor: pointer;
+
+      &::after {
+        animation: rotationArrow 200ms linear both;
+      }
+    }
+
+    &::after {
+      content:"❯";
+      display: inline-block;
+      margin: 0 10px;
+    }
+  }
+
+  &__content {
+    height: 0;
+    overflow: hidden;
+
+    &--text {
+      margin: 20px;
+      font-family: $chat-font;
+
+      p {
+        margin: 20px 0;
+        font-size: 2.3vh;
+        text-align: justify;
+      }
+
+      li {
+        list-style-type: disc;
+        margin: 10px 0;
+        font-size: 2.3vh;
+      }
+    }
+  }
+}

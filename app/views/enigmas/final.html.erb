@@ -45,7 +45,6 @@
   <div class="reveal" data-wrapper-target="siteInfo">
     <h3 class="reveal__title" data-action="click->wrapper#show">Pour les plus curieux</h3>
     <div class="reveal__content" data-wrapper-target="revealContent">
-      <img src="#" alt="image">
       <div class="reveal__content--text">
         <p>Si tu lis ceci, c'est que tu as passé toutes les épreuves. Félicitation ! Tu viens de découvrir FindHint, un site d'énigmes créé par mes soins, Arnaud Rigourd, développeur full stack.</p>
 
@@ -59,7 +58,7 @@
 
     <h3 class="reveal__title" data-action="click->wrapper#show">Création et conception des énigmes</h3>
     <div class="reveal__content" data-wrapper-target="revealContent">
-      <img src="#" alt="image">
+      <%= image_tag "figma.webp", alt:"figma" %>
       <div class="reveal__content--text">
         <p>Comme pour chaque projet, les fondations du site sont nées sur notion. J’ai commencé par poser toutes les idées sous forme de bullet point : d’un coté les idées créatives (relatives aux énigmes), et de l’autre les hard skills nécessaires pour mettre en place chacune des énigmes.</p>
 
@@ -69,7 +68,7 @@
 
     <h3 class="reveal__title" data-action="click->wrapper#show">Le schema de DB</h3>
     <div class="reveal__content" data-wrapper-target="revealContent">
-      <img src="#" alt="image">
+      <%= image_tag "db.webp", alt:"database" %>
       <div class="reveal__content--text">
         <p>En premier lieu, je suis parti sur une DB très simple avec une seule table que j’ai nommé "Enigma" par souci de compréhension. En effet, sachant que j’allais utiliser l’URL dans l’une de mes énigmes, je ne souhaitais pas avoir des termes peu cohérents tels que "pages" ou "answers", car oui, cette table aurait du s’appeler "answers" car destinée à stocker les réponses des utilisateurs. Ce sera d’ailleurs la même logique qui guidera le choix du nom de mes tables tout au long de la création du site.</p>
 
@@ -79,7 +78,7 @@
 
     <h3 class="reveal__title" data-action="click->wrapper#show">1ère énigme : Le mot de passe</h3>
     <div class="reveal__content" data-wrapper-target="revealContent">
-      <img src="#" alt="image">
+      <%= image_tag "perspective.webp", alt:"perspective api" %>
       <div class="reveal__content--text">
         <p>Vous avez peut-être passé cette épreuve sans trop d’encombre, ou même sans vraiment savoir comment vous avez réussi ? C’est normal, même si ce n’était pas vraiment l'objectif. Je m’explique : il ya deux façons de passer cette épreuve. La première consiste à demander poliment, en utilisant des termes déterminés dans un array de réponses acceptées : ["please", "stp", 'svp', "s'il te plait", "s'il te plaît", "s il te plait", "s il te plaît", "s'il-te-plait", "s'il-te-plaît"]</p>
 *Ajouter le hint en image à coté
@@ -90,7 +89,6 @@
 
     <h3 class="reveal__title" data-action="click->wrapper#show">2ème énigme : La mise en évidence</h3>
     <div class="reveal__content" data-wrapper-target="revealContent">
-      <img src="#" alt="image">
       <div class="reveal__content--text">
         <p>J’ai découvert cet effet sur https://www.akufen.ca/fr/studio, et souhaitais le dupliquer. Cependant, leur façon de faire ne me convenait pas tout à fait par rapport à l’utilisation que je souhaitais en faire. J’ai ainsi pu recréer cet effet d’une nouvelle manière. Un tour dans la doc de Mozilla m’a permit de finaliser l’effet de surlignage. Pour plus d’information, n’hésitez pas à faire un tour dans le code source sur mon GitHub <a href="https://github.com/Arnaud-Rigourd">(https://github.com/Arnaud-Rigourd)</a>.</p>
       </div>
@@ -98,7 +96,7 @@
 
     <h3 class="reveal__title" data-action="click->wrapper#show">3ème énigme : Tout ou rien</h3>
     <div class="reveal__content" data-wrapper-target="revealContent">
-      <img src="#" alt="image">
+      <%= image_tag "chat.webp", alt:"chat" %>
       <div class="reveal__content--text">
         <p>Les citations sont uniquement un moyen d’intégrer un peu de parallax au sein du site. Elles n’ont aucun rapport avec l’énigme, mais l’intégration d’information inutile reste pertinent dans un site d’énigmes.</p>
 
@@ -118,7 +116,7 @@
 
     <h3 class="reveal__title" data-action="click->wrapper#show">4ème énigme : Le grand final !</h3>
     <div class="reveal__content" data-wrapper-target="revealContent">
-      <img src="#" alt="image">
+      <%= image_tag "code.webp", alt:"code" %>
       <div class="reveal__content--text">
         <p>Pour l’épreuve finale, je ne voulais pas quelque chose de compliqué, car la précédente épreuve l’était déjà bien assez. C’est pour cette raison que j’ai mis en place un simple puzzle. L’objectif était multiple :</p>
 
@@ -144,12 +142,25 @@
 
     <h3 class="reveal__title" data-action="click->wrapper#show">Dernière étape : Les tests utilisateurs avec Hotjar</h3>
     <div class="reveal__content" data-wrapper-target="revealContent">
-      <img src="#" alt="image">
-      <p class="reveal__content--text">
-
-      </p>
+      <div class="reveal__content--text">
+        <p>La dernière étape et pas des moindres : le test utilisateur. Afin de vérifier le parcours utilisateur ainsi que le niveau de difficulté des énigmes, j’ai testé le site avec des proches, en utilisant Hotjar, une solution de tracking permettant de visualiser le comportement du user, et ainsi vérifier la bonne ergonomie du site. Grâce à ces tests, j’ai pu modifier quelques éléments afin d’offrir l’expérience que tu viens d’expérimenter.</p>
+      </div>
     </div>
 
+    <h3 class="reveal__title" data-action="click->wrapper#show">Coordonnées</h3>
+    <div class="reveal__content" data-wrapper-target="revealContent">
+      <div class="reveal__content--text">
+        <p>Si l’expérience t’a plu et que tu souhaites en savoir plus sur mon travail, n’hésites pas à faire un tour sur :</p>
+        <ul>
+          <li>Mon Portfolio : <a href="https://www.arnaud-rigourd.com/">https://www.arnaud-rigourd.com/</a></li>
+          <li>Mon GitHub : <a href="https://github.com/Arnaud-Rigourd">https://github.com/Arnaud-Rigourd</a></li>
+          <li>Mon Linkedin : <a href="https://www.linkedin.com/in/arnaudrigourd/">https://www.linkedin.com/in/arnaudrigourd/</a></li>
+          <li>Mon téléphone : 06 88 61 24 83</li>
+          <li>Mon Mail : <a href="mailto:arnaud.rigourd@hotmail.fr">arnaud.rigourd@hotmail.fr</a></li>
+        </ul>
+      </div>
+      <%= image_tag "thank-you.webp", class:"last-image", alt:"thank-you" %>
+    </div>
 
   </div>
 </main>

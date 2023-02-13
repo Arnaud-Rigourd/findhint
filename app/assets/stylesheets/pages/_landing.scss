@@ -44,3 +44,65 @@
     }
    }
 }
+
+.container__loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  .loading-title {
+    font-size: 6.5vh;
+    margin: 8px;
+
+    &:first-child {
+      animation: loading 1000ms linear infinite;
+    }
+
+    &:nth-child(2) {
+      animation: loading 1000ms linear infinite;
+      animation-delay: 50ms;
+    }
+
+    &:nth-child(3) {
+      animation: loading 1000ms linear infinite;
+      animation-delay: 100ms;
+    }
+
+    &:nth-child(4) {
+      animation: loading 1000ms linear infinite;
+      animation-delay: 150ms;
+    }
+
+    &:nth-child(5) {
+      animation: loading 1000ms linear infinite;
+      animation-delay: 200ms;
+    }
+
+    &:nth-child(6) {
+      animation: loading 1000ms linear infinite;
+      animation-delay: 250ms;
+    }
+
+    &:nth-child(7) {
+      animation: loading 1000ms linear infinite;
+      animation-delay: 300ms;
+    }
+
+    &:nth-child(8) {
+      animation: loading 1000ms linear infinite;
+      animation-delay: 350ms;
+    }
+
+    &:nth-child(9) {
+      animation: loading 1000ms linear infinite;
+      animation-delay: 400ms;
+    }
+
+    &:nth-child(10) {
+      animation: loading 1000ms linear infinite;
+      animation-delay: 450ms;
+    }
+  }
+}

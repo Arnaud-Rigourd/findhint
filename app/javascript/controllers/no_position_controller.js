@@ -9,19 +9,19 @@ export default class extends Controller {
     // console.log(this.noTarget.getBoundingClientRect()['y'])
   }
 
-  changePosition(){
+  changePosition() {
     this.xPosition = this.#range(-5, 10)
     this.yPosition = this.#range(-2, 5)
 
     this.noTarget.style.transform = `translate(${this.#sample(this.xPosition) * 20}px, ${this.#sample(this.yPosition) * 20}px)`
   }
 
-  stop(){
+  stop() {
     this.yesLinkTarget.style = "animation-play-state: paused"
     this.yesTarget.style = "animation-play-state: paused"
   }
 
-  start(){
+  start() {
     this.yesLinkTarget.style = "animation-play-state: start"
     this.yesTarget.style = "animation-play-state: start"
   }

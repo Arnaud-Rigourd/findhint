@@ -1,19 +1,33 @@
-<div class="container flex-center">
+<div class="container flex-center" data-controller="loading" data-loading-target="mainContainer">
   <div class="frame flex-center">
     <div class="corner-points flex-center">
       <div class="point"></div>
       <div class="point"></div>
       <div class="point"></div>
       <div class="point"></div>
-    <h1>BIENVENUE SUR FINDHINT !!!</h1>
+    <h1 data-loading-target="title">BIENVENUE SUR FINDHINT !!!</h1>
 
       <p>Tu as quelques minutes pour jouer ? (il y a une surprise à la fin ! )</p>
       <p class="sub-text">*Le site est désormais disponible sur smartphone, mais l'expérience est optimisée pour pc (Mac, Windows...)</p>
 
-      <div class="yesno" data-controller="no-position">
-        <p data-no-position-target="yes"><%= link_to "Oui", enigmas_path, data: {turbo_method: :post, no_position_target:"yesLink"} %></p>
-        <p data-no-position-target="no" data-action="click->no-position#changePosition mouseenter->no-position#stop mouseleave->no-position#start">Non</p>
+      <div class="yesno" data-controller="no-position" data-loading-target="yesNoDiv">
+        <p data-action="click->loading#loading" data-no-position-target="yes" data-loading-target="yesBtn"><%= link_to "Oui", enigmas_path, data: {turbo_method: :post, no_position_target:"yesLink", loading_target:"yesLink"} %></p>
+        <p data-no-position-target="no" data-loading-target="noBtn" data-action="click->no-position#changePosition mouseenter->no-position#stop mouseleave->no-position#start">Non</p>
       </div>
     </div>
   </div>
+
+  <div class="container__loading hidden" data-loading-target="loadingContainer">
+    <span class="loading-title">L</span>
+    <span class="loading-title">O</span>
+    <span class="loading-title">A</span>
+    <span class="loading-title">D</span>
+    <span class="loading-title">I</span>
+    <span class="loading-title">N</span>
+    <span class="loading-title">G</span>
+    <span class="loading-title">.</span>
+    <span class="loading-title">.</span>
+    <span class="loading-title">.</span>
+  </div>
+
 </div>

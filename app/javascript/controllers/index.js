@@ -13,6 +13,9 @@ application.register("hello", HelloController)
 import HintController from "./hint_controller"
 application.register("hint", HintController)
 
+import LoadingController from "./loading_controller"
+application.register("loading", LoadingController)
+
 import NoPositionController from "./no_position_controller"
 application.register("no-position", NoPositionController)
 

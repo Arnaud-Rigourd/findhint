@@ -105,8 +105,13 @@ main {
   &__content {
     height: 0;
     overflow: hidden;
+    perspective: 100px;
 
     img {
+      position: relative;
+      cursor: zoom-in;
+      transform-origin: top left;
+      transition: all 0.3s ease;
       box-shadow: 5px 0 10px #00000026;
       float: left;
       margin: 40px 25px 10px 25px;

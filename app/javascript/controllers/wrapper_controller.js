@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="wrapper"
 export default class extends Controller {
-  static targets = ["scroll", "siteInfo", "contactMessage", "revealContent"]
+  static targets = ["scroll", "siteInfo", "contactMessage", "revealContent", "thanksFrame"]
 
   connect() {
   }
@@ -20,6 +20,8 @@ export default class extends Controller {
   reveal() {
     if (!this.contactMessageTarget.classList.contains('hidden')) {
       this.siteInfoTarget.classList.remove('hidden')
+      this.thanksFrameTarget.classList.remove('hidden')
+      this.thanksFrameTarget.classList.add('flex-center')
       this.scrollTargets['1'].classList.remove('hidden')
 
       if (this.scrollTargets['1'].getBoundingClientRect()['y'] < window.innerHeight - 60) {

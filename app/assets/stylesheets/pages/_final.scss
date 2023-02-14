@@ -137,7 +137,16 @@ main {
         a {
           color: $dark;
         }
+
+        .answers-list {
+          font-style: normal;
+        }
       }
     }
   }
+}
+
+.thanks-link {
+  text-decoration: none;
+  font-size: 4.1vh;
 }

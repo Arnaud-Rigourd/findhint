@@ -41,4 +41,28 @@ export default class extends Controller {
       e.target.nextElementSibling.style.height = 0
     }
   }
+
+  zoom(e) {
+    this.revealImages = document.querySelectorAll('.reveal__content > img')
+    this.currentImage = e.target
+    this.parent = this.currentImage.parentElement
+
+    this.currentImage.style.transform = "scale3d(1.5, 1.5, 1.5)"
+    this.currentImage.style.filter = "none"
+    this.currentImage.classList.add('active')
+    this.parent.style.minHeight = "65vh"
+    e.stopPropagation()
+
+    document.addEventListener('click', (e) => {
+      this.revealImages.forEach((i) => {
+        if (i.matches('.active')) {
+          i.style.transform = "scale3d(1, 1, 1)"
+          i.classList.remove('active')
+          i.style.filter = "grayscale(1)"
+          i.parentElement.style.minHeight = "0"
+          e.stopPropagation()
+        }
+      })
+    })
+  }
 }

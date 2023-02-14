@@ -4,9 +4,6 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["yesBtn", "yesLink", "noBtn", "loadingContainer", "title", "mainContainer", "yesNoDiv"]
 
-  connect() {
-  }
-
   loading() {
     this.paragraphes = document.querySelectorAll('p')
     this.darkContrast = "#291f1f5d"

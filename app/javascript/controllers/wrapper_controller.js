@@ -50,7 +50,7 @@ export default class extends Controller {
     this.currentImage.style.transform = "scale3d(1.5, 1.5, 1.5)"
     this.currentImage.style.filter = "none"
     this.currentImage.classList.add('active')
-    this.parent.style.minHeight = "65vh"
+    this.parent.style.minHeight = "70vh"
     e.stopPropagation()
 
     document.addEventListener('click', (e) => {

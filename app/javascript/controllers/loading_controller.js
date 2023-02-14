@@ -7,9 +7,7 @@ export default class extends Controller {
   connect() {
   }
 
-  loading(e) {
-    e.preventDefault() // Supprimer à la fin
-
+  loading() {
     this.paragraphes = document.querySelectorAll('p')
     this.darkContrast = "#291f1f5d"
 
